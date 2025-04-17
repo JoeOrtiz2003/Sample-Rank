@@ -4,15 +4,15 @@
 
     --ranking-title-color: white;
     --ranking-header-color: white;
-    --ranking-header-background-color: #344b13;
+    --ranking-header-background-color: #7a0000;
 
     --ranking-element-color: white;
-    --ranking-uneven-background-color: rgba(81, 92, 78, 0.836);
-    --ranking-even-background-color: rgba(88, 97, 89, 0.7);
+    --ranking-uneven-background-color: #550000;
+    --ranking-even-background-color: #370000;
 
     --alive-background-color: #fff;
     --knocked-background-color: #ff0000;
-    --dead-background-color: #000000;
+    --dead-background-color: #080000;
 }
 
 body {
@@ -182,46 +182,3 @@ body {
     background-color: var(--dead-background-color);
 }
 
-/* 🟩 Legend Styles */
-.statusLegend {
-    display: flex;
-    justify-content: flex-start; /* align to the left */
-    align-items: center;
-    width: -500%;
-    padding: 6px 14px;
-    background-color: var(--ranking-header-background-color);
-    border-radius: 0 0 4px 4px;
-    box-sizing: border-box;
-    gap: 30px;
-
-    /* 👇 simulate center with pixels */
-    margin-left: -300px; /* adjust this to visually center the block */
-    margin-top: 12px; 
-}
-
-.statusItem {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-
-.statusBox {
-    width: 14px;
-    height: 14px;
-    border-radius: 2px;
-    border: 1px solid white;
-}
-
-.statusBox.alive {
-    background-color: var(--alive-background-color);
-}
-
-.statusBox.knocked {
-    background-color: var(--dead-background-color);
-}

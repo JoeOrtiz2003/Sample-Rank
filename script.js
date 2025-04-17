@@ -4,7 +4,7 @@ const query = "select AX, AY, AZ, BA, BB"; // Adjust to your column setup
 const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}&tq=${encodeURIComponent(query)}`;
 
 // Create 18 rankingElement blocks dynamically
-function createRankingElements(count = 18) {
+function createRankingElements(count = 21) {
     const wrapper = document.getElementById("rankingElementsWrapper");
     wrapper.innerHTML = ""; // Clear previous elements if any
 
@@ -83,6 +83,6 @@ function updateRankingElements(data) {
 }
 
 // Initialize page
-createRankingElements(18);
+createRankingElements(21);
 fetchRankingData();
 setInterval(fetchRankingData, 5000);
