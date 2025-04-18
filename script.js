@@ -77,12 +77,20 @@ function updateRankingElements(data) {
 
         // Update alive indicators
         aliveBoxes.forEach((box, i) => {
-            box.style.backgroundColor = i < teamData.alive ? "#fff" : "#000000";
+            box.style.backgroundColor = i < teamData.alive ? "#fff" : "#2c2102";
         });
+
+        // Fade the whole team block if alive is 0
+        if (teamData.alive === 0) {
+            element.classList.add("fadedTeam");
+        } else {
+            element.classList.remove("fadedTeam");
+        }
     });
 }
 
+
 // Initialize page
-createRankingElements(21);
+createRankingElements(16);
 fetchRankingData();
-setInterval(fetchRankingData, 5000);
+setInterval(fetchRankingData, 10);

@@ -4,15 +4,15 @@
 
     --ranking-title-color: white;
     --ranking-header-color: white;
-    --ranking-header-background-color: #7a0000;
+    --ranking-header-background-color: #b18a0d;
 
     --ranking-element-color: white;
-    --ranking-uneven-background-color: #550000;
-    --ranking-even-background-color: #370000;
+    --ranking-uneven-background-color: #5f5c57;
+    --ranking-even-background-color: #504d4b;
 
     --alive-background-color: #fff;
     --knocked-background-color: #ff0000;
-    --dead-background-color: #080000;
+    --dead-background-color: #2c2102;
 }
 
 body {
@@ -180,5 +180,11 @@ body {
 
 .rankingElementDead .rankingElementBackground {
     background-color: var(--dead-background-color);
+}
+
+.fadedTeam {
+    opacity: 0.3;
+    filter: grayscale(100%);
+    transition: all 0.5s ease-in-out;
 }
 
