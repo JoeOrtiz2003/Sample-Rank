@@ -4,7 +4,7 @@ const query = "select AX, AY, AZ, BA, BB"; // Adjust to your column setup
 const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}&tq=${encodeURIComponent(query)}`;
 
 // Create 18 rankingElement blocks dynamically
-function createRankingElements(count = 21) {
+function createRankingElements(count = 16) {
     const wrapper = document.getElementById("rankingElementsWrapper");
     wrapper.innerHTML = ""; // Clear previous elements if any
 
@@ -77,7 +77,7 @@ function updateRankingElements(data) {
 
         // Update alive indicators
         aliveBoxes.forEach((box, i) => {
-            box.style.backgroundColor = i < teamData.alive ? "#fff" : "#2c2102";
+            box.style.backgroundColor = i < teamData.alive ? "#ffff" : "#141414";
         });
 
         // Fade the whole team block if alive is 0
