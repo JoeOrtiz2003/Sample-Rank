@@ -183,8 +183,8 @@ body {
 }
 
 .fadedTeam {
-    opacity: 0.8;
-    filter: grayscale(100%);
+    opacity: 0.9;
+    filter: grayscale(90%);
     transition: all 0.5s ease-in-out;
 }
 
