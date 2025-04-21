@@ -184,7 +184,7 @@ body {
 
 .fadedTeam {
     opacity: 0.9;
-    filter: grayscale(60%);
+    filter: grayscale(100%);
     transition: all 0.5s ease-in-out;
 }
 
