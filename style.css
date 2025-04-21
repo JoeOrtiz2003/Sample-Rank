@@ -202,6 +202,3 @@ body {
     animation: slideUp 0.5s ease-in-out;
 }
 
-.slide-down {
-    animation: slideDown 0.5s ease-in-out;
-}
