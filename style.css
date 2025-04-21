@@ -183,8 +183,25 @@ body {
 }
 
 .fadedTeam {
-    opacity: 1.0;
-    filter: grayscale(100%);
+    opacity: 0.9;
+    filter: grayscale(60%);
     transition: all 0.5s ease-in-out;
 }
 
+@keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-20px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-in-out;
+}
+
+.slide-down {
+    animation: slideDown 0.5s ease-in-out;
+}
