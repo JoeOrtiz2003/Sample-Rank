@@ -234,7 +234,7 @@ body {
 .lowerHeaderInner {
     display: flex;
     gap: 60px;
-    transform: translateX(-20px); /* shift contents slightly left */
+    transform: translateX(0px); /* shift contents slightly left */
 }
 
 
