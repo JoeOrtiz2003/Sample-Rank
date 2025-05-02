@@ -191,8 +191,18 @@ body {
 
 .fadedTeam {
     opacity: 1.0;
-    filter: grayscale(60%);
+    filter: grayscale(100%);
     transition: all 0.5s ease-in-out;
+}
+
+.fadedTeam .rankingElementRank,
+.fadedTeam .rankingElementName,
+.fadedTeam .rankingElementLogo,
+.fadedTeam .rankingElementKills,
+.fadedTeam .rankingElementPoints,
+.fadedTeam .rankingElementAlive {
+    opacity: 0.4;
+    filter: grayscale(100%);
 }
 
 /* Animation */
