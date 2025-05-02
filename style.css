@@ -42,11 +42,6 @@ body {
     display: none;
 }
 
-#rankingHeaderPoints,
-.rankingElementPoints {
-    display: none;
-}
-
 .rankingHeader {
     display: flex;
     width: 100%;
@@ -62,7 +57,7 @@ body {
     text-align: center;
 }
 
-/* Widths */
+/* Flex layout and widths */
 #rankingHeaderRank,
 .rankingElementRank {
     flex: 0 0 40px;
@@ -78,6 +73,17 @@ body {
 .rankingElementAliveWrapper {
     flex: 0 0 100px;
     justify-content: center;
+}
+
+#rankingHeaderPoints,
+.rankingElementPoints {
+    display: block;
+    flex: 0 0 60px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ranking-element-color);
+    margin: 0;
 }
 
 #rankingHeaderElims,
@@ -123,7 +129,8 @@ body {
 
 .rankingElementRank,
 .rankingElementName,
-.rankingElementKills {
+.rankingElementKills,
+.rankingElementPoints {
     font-size: 18px;
     letter-spacing: 0.1em;
     line-height: 40px;
@@ -165,7 +172,7 @@ body {
     border-radius: 25px;
 }
 
-/* Even/odd background */
+/* Even/odd backgrounds */
 .rankingElement:nth-child(even) .rankingElementBackground {
     background-color: var(--ranking-uneven-background-color);
 }
@@ -188,6 +195,7 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
+/* Animation */
 @keyframes slideUp {
     0% { transform: translateY(20px); opacity: 0.5; }
     100% { transform: translateY(0); opacity: 1; }
@@ -202,3 +210,47 @@ body {
     animation: slideUp 0.5s ease-in-out;
 }
 
+
+.lowerHeader {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.lowerHeaderInner {
+    display: flex;
+    gap: 60px;
+    transform: translateX(-100px); /* shift contents slightly left */
+}
+
+
+.lowerHeaderSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.statusIndicatorBox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+.whiteBox {
+    background-color: white;
+}
+
+.blackBox {
+    background-color: black;
+}
+
+.statusIndicatorText {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
