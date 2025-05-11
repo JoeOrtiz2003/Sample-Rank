@@ -4,11 +4,11 @@
 
     --ranking-title-color: white;
     --ranking-header-color: white;
-    --ranking-header-background-color: #bf0000;
+    --ranking-header-background-color: #00b7ed;
 
     --ranking-element-color: white;
-    --ranking-uneven-background-color: #501111;
-    --ranking-even-background-color: #420c0c;
+    --ranking-uneven-background-color: #147b9b;
+    --ranking-even-background-color: #003d4b;
 
     --alive-background-color: #fff;
     --knocked-background-color: #ff0000;
@@ -42,6 +42,11 @@ body {
     display: none;
 }
 
+#rankingHeaderPoints,
+.rankingElementPoints {
+    display: none;
+}
+
 .rankingHeader {
     display: flex;
     width: 100%;
@@ -57,7 +62,7 @@ body {
     text-align: center;
 }
 
-/* Flex layout and widths */
+/* Widths */
 #rankingHeaderRank,
 .rankingElementRank {
     flex: 0 0 40px;
@@ -73,17 +78,6 @@ body {
 .rankingElementAliveWrapper {
     flex: 0 0 100px;
     justify-content: center;
-}
-
-#rankingHeaderPoints,
-.rankingElementPoints {
-    display: block;
-    flex: 0 0 60px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--ranking-element-color);
-    margin: 0;
 }
 
 #rankingHeaderElims,
@@ -129,8 +123,7 @@ body {
 
 .rankingElementRank,
 .rankingElementName,
-.rankingElementKills,
-.rankingElementPoints {
+.rankingElementKills {
     font-size: 18px;
     letter-spacing: 0.1em;
     line-height: 40px;
@@ -172,7 +165,7 @@ body {
     border-radius: 25px;
 }
 
-/* Even/odd backgrounds */
+/* Even/odd background */
 .rankingElement:nth-child(even) .rankingElementBackground {
     background-color: var(--ranking-uneven-background-color);
 }
@@ -190,22 +183,11 @@ body {
 }
 
 .fadedTeam {
-    opacity: 1.0;
-    filter: grayscale(100%);
+    opacity: 0.9;
+    filter: grayscale(60%);
     transition: all 0.5s ease-in-out;
 }
 
-.fadedTeam .rankingElementRank,
-.fadedTeam .rankingElementName,
-.fadedTeam .rankingElementLogo,
-.fadedTeam .rankingElementKills,
-.fadedTeam .rankingElementPoints,
-.fadedTeam .rankingElementAlive {
-    opacity: 0.4;
-    filter: grayscale(100%);
-}
-
-/* Animation */
 @keyframes slideUp {
     0% { transform: translateY(20px); opacity: 0.5; }
     100% { transform: translateY(0); opacity: 1; }
@@ -220,47 +202,3 @@ body {
     animation: slideUp 0.5s ease-in-out;
 }
 
-
-.lowerHeader {
-    display: flex;
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 8px 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.lowerHeaderInner {
-    display: flex;
-    gap: 60px;
-    transform: translateX(0px); /* shift contents slightly left */
-}
-
-
-.lowerHeaderSection {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.statusIndicatorBox {
-    width: 20px;
-    height: 20px;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-
-.whiteBox {
-    background-color: white;
-}
-
-.blackBox {
-    background-color: black;
-}
-
-.statusIndicatorText {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-}

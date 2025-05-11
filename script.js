@@ -1,11 +1,12 @@
+
 const sheetID = "1srwCRcCf_grbInfDSURVzXXRqIqxQ6_IIPG-4_gnSY8";
 const sheetName = "LIVE";
-const query = "select K, I, J, L, M, N";  // AW = points
+const query = "select AZ, BA, BB, BC, BD";
 const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}&tq=${encodeURIComponent(query)}`;
 
 let previousRanks = {};
 
-function createRankingElements(count = 16) {
+function createRankingElements(count = 18) {
     const wrapper = document.getElementById("rankingElementsWrapper");
     wrapper.innerHTML = "";
 
@@ -14,24 +15,23 @@ function createRankingElements(count = 16) {
         div.className = "rankingElement";
         div.setAttribute("data-position", i);
         div.innerHTML = `
-                <div class="rankingElementBackground"></div>
-                <div class="rankingElementWrapper">
-                    <p class="rankingElementRank"></p>
-                    <div class="rankingElementLogoWrapper">
-                        <div class="rankingElementNoLogo"></div>
-                        <img class="rankingElementLogo" src="logo.png" alt="Logo" />
-                        <p class="rankingElementName"></p>
-                    </div>
-                    <div class="rankingElementAliveWrapper">
-                        <div class="rankingElementAlive"></div>
-                        <div class="rankingElementAlive"></div>
-                        <div class="rankingElementAlive"></div>
-                        <div class="rankingElementAlive"></div>
-                    </div>
-                    <p class="rankingElementPoints"></p>
-                    <p class="rankingElementKills"></p>
+            <div class="rankingElementBackground"></div>
+            <div class="rankingElementWrapper">
+                <p class="rankingElementRank"></p>
+                <div class="rankingElementLogoWrapper">
+                    <div class="rankingElementNoLogo"></div>
+                    <img class="rankingElementLogo" src="logo.png" alt="Logo" />
+                    <p class="rankingElementName"></p>
                 </div>
-            `;
+                <div class="rankingElementAliveWrapper">
+                    <div class="rankingElementAlive"></div>
+                    <div class="rankingElementAlive"></div>
+                    <div class="rankingElementAlive"></div>
+                    <div class="rankingElementAlive"></div>
+                </div>
+                <p class="rankingElementKills"></p>
+            </div>
+        `;
         wrapper.appendChild(div);
     }
 }
@@ -45,12 +45,11 @@ async function fetchRankingData() {
 
         const jsonData = JSON.parse(jsonText[1]);
         const rows = jsonData.table.rows.map(row => ({
-            points: row.c[0]?.v ?? 0,
-            rank: row.c[1]?.v ?? "#",
-            team: row.c[2]?.v?.toString().trim() ?? "Unknown",
-            elims: row.c[3]?.v ?? 0,
-            logo: row.c[4]?.v ?? "https://placehold.co/22x22/000000/FFF?text=?",
-            alive: row.c[5]?.v ?? 0
+            rank: row.c[0]?.v ?? "#",
+            team: row.c[1]?.v?.toString().trim() ?? "Unknown",
+            elims: row.c[2]?.v ?? 0,
+            logo: row.c[3]?.v ?? "https://placehold.co/22x22/000000/FFF?text=?",
+            alive: row.c[4]?.v ?? 0
         }));
 
         updateRankingElements(rows);
@@ -83,7 +82,6 @@ function updateRankingElements(data) {
         element.querySelector(".rankingElementName").textContent = teamData.team;
         element.querySelector(".rankingElementLogo").src = teamData.logo;
         element.querySelector(".rankingElementKills").textContent = teamData.elims;
-        element.querySelector(".rankingElementPoints").textContent = teamData.points;
 
         const aliveBoxes = element.querySelectorAll(".rankingElementAlive");
         aliveBoxes.forEach((box, i) => {
@@ -100,6 +98,7 @@ function updateRankingElements(data) {
     previousRanks = newRanks;
 }
 
-createRankingElements(16);
+createRankingElements(18);
 fetchRankingData();
-setInterval(fetchRankingData, 10);
+setInterval(fetchRankingData, 3000);
+
