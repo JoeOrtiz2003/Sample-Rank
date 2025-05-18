@@ -4,15 +4,15 @@
 
     --ranking-title-color: white;
     --ranking-header-color: white;
-    --ranking-header-background-color: #00b7ed;
+    --ranking-header-background-color: #9e0000;
 
     --ranking-element-color: white;
-    --ranking-uneven-background-color: #147b9b;
-    --ranking-even-background-color: #003d4b;
+    --ranking-uneven-background-color: #6f0000;
+    --ranking-even-background-color: #2b0000;
 
     --alive-background-color: #fff;
-    --knocked-background-color: #ff0000;
-    --dead-background-color: #141414;
+    --lower-background-color: #110000;
+    --dead-background-color: #171717;
 }
 
 body {
@@ -42,11 +42,6 @@ body {
     display: none;
 }
 
-#rankingHeaderPoints,
-.rankingElementPoints {
-    display: none;
-}
-
 .rankingHeader {
     display: flex;
     width: 100%;
@@ -62,7 +57,7 @@ body {
     text-align: center;
 }
 
-/* Widths */
+/* Flex layout and widths */
 #rankingHeaderRank,
 .rankingElementRank {
     flex: 0 0 40px;
@@ -79,6 +74,7 @@ body {
     flex: 0 0 100px;
     justify-content: center;
 }
+
 
 #rankingHeaderElims,
 .rankingElementKills {
@@ -165,7 +161,7 @@ body {
     border-radius: 25px;
 }
 
-/* Even/odd background */
+/* Even/odd backgrounds */
 .rankingElement:nth-child(even) .rankingElementBackground {
     background-color: var(--ranking-uneven-background-color);
 }
@@ -183,11 +179,21 @@ body {
 }
 
 .fadedTeam {
-    opacity: 0.9;
-    filter: grayscale(60%);
+    opacity: 1.0;
+    filter: grayscale(100%);
     transition: all 0.5s ease-in-out;
 }
 
+.fadedTeam .rankingElementRank,
+.fadedTeam .rankingElementName,
+.fadedTeam .rankingElementLogo,
+.fadedTeam .rankingElementKills,
+.fadedTeam .rankingElementAlive {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+/* Animation */
 @keyframes slideUp {
     0% { transform: translateY(20px); opacity: 0.5; }
     100% { transform: translateY(0); opacity: 1; }
@@ -202,3 +208,47 @@ body {
     animation: slideUp 0.5s ease-in-out;
 }
 
+
+.lowerHeader {
+    display: flex;
+    width: 100%;
+    background-color: var(--lower-background-color);
+    color: white;
+    padding: 8px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.lowerHeaderInner {
+    display: flex;
+    gap: 60px;
+    transform: translateX(0px); /* shift contents slightly left */
+}
+
+
+.lowerHeaderSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.statusIndicatorBox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.whiteBox {
+    background-color: var(--alive-background-color);
+}
+
+.blackBox {
+    background-color: var(--dead-background-color);
+}
+
+.statusIndicatorText {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}

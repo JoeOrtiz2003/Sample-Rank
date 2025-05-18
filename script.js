@@ -6,7 +6,7 @@ const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=
 
 let previousRanks = {};
 
-function createRankingElements(count = 18) {
+function createRankingElements(count = 17) {
     const wrapper = document.getElementById("rankingElementsWrapper");
     wrapper.innerHTML = "";
 
@@ -98,7 +98,7 @@ function updateRankingElements(data) {
     previousRanks = newRanks;
 }
 
-createRankingElements(18);
+createRankingElements(17);
 fetchRankingData();
 setInterval(fetchRankingData, 3000);
 
