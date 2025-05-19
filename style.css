@@ -2,17 +2,17 @@
     --mainWidth: min(90vw, 600px);
     --font: 'Oswald', sans-serif;
 
-    --ranking-title-color: white;
-    --ranking-header-color: white;
-    --ranking-header-background-color: #9e0000;
+    --ranking-title-color: black;
+    --ranking-header-color: black;
+    --ranking-header-background-color: #90b44d;
 
     --ranking-element-color: white;
-    --ranking-uneven-background-color: #6f0000;
-    --ranking-even-background-color: #2b0000;
+    --ranking-uneven-background-color: #5e851e;
+    --ranking-even-background-color: #28380b;
 
     --alive-background-color: #fff;
-    --lower-background-color: #110000;
-    --dead-background-color: #171717;
+    --lower-background-color: #28380b;
+    --dead-background-color: black;
 }
 
 body {
@@ -235,7 +235,7 @@ body {
 .statusIndicatorBox {
     width: 20px;
     height: 20px;
-    border: 2px solid black;
+    border: 2px solid #90b44d;
     border-radius: 4px;
 }
 
