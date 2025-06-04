@@ -4,14 +4,14 @@
 
     --ranking-title-color: black;
     --ranking-header-color: white;
-    --ranking-header-background-color: #990000;
+    --ranking-header-background-color: #098ab1;
 
     --ranking-element-color: white;
-    --ranking-uneven-background-color: #2b0001;
-    --ranking-even-background-color: #4b0000;
+    --ranking-uneven-background-color: #0d738d;
+    --ranking-even-background-color: #0c5a71;
 
     --alive-background-color: white;
-    --lower-background-color: #4b0000;
+    --lower-background-color: #0c5a71;
     --dead-background-color: black;
 }
 
