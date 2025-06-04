@@ -1,5 +1,5 @@
 :root {
-    --mainWidth: min(90vw, 600px);
+    --mainWidth: min(90vw, 350px);
     --font: 'Oswald', sans-serif;
 
     --ranking-title-color: black;
@@ -62,7 +62,9 @@ body {
 .rankingElementRank {
     flex: 0 0 40px;
     text-align: center;
+    padding-left: 15px; /* Shift content slightly to the right */
 }
+
 
 #rankingHeaderTeam,
 .rankingElementLogoWrapper {
@@ -120,7 +122,7 @@ body {
 .rankingElementRank,
 .rankingElementName,
 .rankingElementKills {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.1em;
     line-height: 40px;
     font-weight: 600;
@@ -137,7 +139,7 @@ body {
 .rankingElementLogoWrapper {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     padding-left: 6px;
 }
 
@@ -256,7 +258,6 @@ body {
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
   border-width: 0;
   border-style: solid;
   border-color: #e5e7eb;
