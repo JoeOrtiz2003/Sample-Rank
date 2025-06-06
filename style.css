@@ -1,15 +1,12 @@
 :root {
     --mainWidth: min(90vw, 350px);
     --font: 'Oswald', sans-serif;
-
     --ranking-title-color: black;
     --ranking-header-color: white;
     --ranking-header-background-color: #098ab1;
-
     --ranking-element-color: white;
     --ranking-uneven-background-color: #0d738d;
     --ranking-even-background-color: #0c5a71;
-
     --alive-background-color: white;
     --lower-background-color: #0c5a71;
     --dead-background-color: black;
@@ -144,8 +141,8 @@ body {
 }
 
 .rankingElementLogo {
-    width: 26px;
-    height: 26px;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
 }
 
