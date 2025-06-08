@@ -3,12 +3,12 @@
     --font: 'Oswald', sans-serif;
     --ranking-title-color: black;
     --ranking-header-color: white;
-    --ranking-header-background-color: #098ab1;
+    --ranking-header-background-color: #10b0c2;
     --ranking-element-color: white;
-    --ranking-uneven-background-color: #0d738d;
-    --ranking-even-background-color: #0c5a71;
+    --ranking-uneven-background-color: #214f8e;
+    --ranking-even-background-color: #0b2350;
     --alive-background-color: white;
-    --lower-background-color: #0c5a71;
+    --lower-background-color: #0b2350;
     --dead-background-color: black;
 }
 
