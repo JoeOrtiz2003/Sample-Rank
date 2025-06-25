@@ -35,7 +35,7 @@ body.no-scroll {
   transform: translateY(120px);
   margin-right: 0;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  transform: translateX(0%);
+  transform: translateX();
   opacity: 1;
 }
 
