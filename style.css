@@ -1,6 +1,7 @@
 :root {
   --mainWidth: min(85vw, 240px);
   --font: 'Oswald', sans-serif;
+  --ranking-title-color: black;
   --ranking-header-color: black;
   --ranking-header-background-color: #bfc0ff;
   --ranking-element-color: white;
@@ -32,22 +33,23 @@ body.no-scroll {
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
-  transform: translateY(120px);
+  transform: translateX(0%) translateY(115px); /* <-- COMBINED */
   margin-right: 0;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  transform: translateX();
+  opacity: 1;
+}
+
+
+#mainDiv.slide-in {
+  transform: translateX(0%) translateY(115px); /* Include Y */
   opacity: 1;
 }
 
 #mainDiv.slide-out {
-  transform: translateX(100%);
+  transform: translateX(100%) translateY(115px); /* Include Y */
   opacity: 0;
 }
 
-#mainDiv.slide-in {
-  transform: translateX(0%);
-  opacity: 1;
-}
 
 .buttonContainer {
   position: fixed;
@@ -280,17 +282,6 @@ body.no-scroll {
   overflow: hidden;
 }
 
-#mainDiv.slide-in {
-  transform: translateX(0%);
-  opacity: 1;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#mainDiv.slide-out {
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
 
 /* Optional: stagger entrance on show */
 #mainDiv.stagger-animate .rankingHeader,
