@@ -2,7 +2,7 @@
   --mainWidth: min(85vw, 240px);
   --font: 'Oswald', sans-serif;
   --ranking-title-color: black;
-  --ranking-header-color: black;
+  --ranking-header-color: white;
   --ranking-header-background-color: #bfc0ff;
   --ranking-element-color: white;
   --ranking-uneven-background-color: #3f395f;
