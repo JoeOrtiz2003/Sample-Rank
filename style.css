@@ -1,12 +1,12 @@
 :root {
-  --mainWidth: min(85vw, 240px);
+  --mainWidth: min(90vw, 250px);
   --font: 'Oswald', sans-serif;
   --ranking-title-color: black;
   --ranking-header-color: black;
   --ranking-header-background-color: #bfc0ff;
   --ranking-element-color: white;
-  --ranking-uneven-background-color: #3f395f;
-  --ranking-even-background-color: #4e486e;
+  --ranking-uneven-background-color: #5b5c8e;
+  --ranking-even-background-color: #474772;
   --alive-background-color: #ffff;
   --lower-background-color: #3f395f;
   --dead-background-color: #4e4e4e;
@@ -95,7 +95,7 @@ body.no-scroll {
 
 #rankingHeaderTeam,
 .rankingElementLogoWrapper {
-  flex: 0 0 80px;
+  flex: 0 0 90px;
 }
 
 #rankingHeaderAlive,
@@ -148,7 +148,7 @@ body.no-scroll {
 .rankingElementRank,
 .rankingElementName,
 .rankingElementKills {
-  font-size: 18px;
+  font-size: px;
   line-height: 32px;
   font-weight: 510;
   color: var(--ranking-element-color);
