@@ -1,45 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mainDiv = document.getElementById("mainDiv");
-  const showButton = document.getElementById("showButton");
-  const hideButton = document.getElementById("hideButton");
-
-  hideButton.addEventListener("click", () => {
-    mainDiv.classList.remove("slide-in");
-    mainDiv.classList.add("slide-out");
-
-    hideButton.style.display = "none";
-    setTimeout(() => {
-      mainDiv.style.display = "none";
-      showButton.style.display = "inline-block";
-      document.body.classList.remove("no-scroll");
-
-      const elements = mainDiv.querySelectorAll(".rankingHeader, .rankingElement, .lowerHeader");
-      elements.forEach(el => {
-        el.style.animationDelay = "0ms";
-        el.style.opacity = "";
-        el.style.transform = "";
-      });
-      mainDiv.classList.remove("stagger-animate");
-    }, 500);
-  });
-
-  showButton.addEventListener("click", () => {
-    mainDiv.style.display = "flex";
-    void mainDiv.offsetWidth;
-    mainDiv.classList.remove("slide-out");
-    mainDiv.classList.add("slide-in");
-
-    document.body.classList.add("no-scroll");
-    mainDiv.classList.add("stagger-animate");
-
-    const staggerElements = mainDiv.querySelectorAll(".rankingHeader, .rankingElement, .lowerHeader");
-    staggerElements.forEach((el, i) => {
-      el.style.animationDelay = `${i * 100}ms`;
-    });
-
-    showButton.style.display = "none";
-    hideButton.style.display = "inline-block";
-  });
+  mainDiv.style.display = "flex"; // Always visible
 
   createRankingElements(16);
   fetchRankingData();
@@ -118,7 +79,6 @@ function updateRankingElements(data) {
 
     const prevIndex = previousRanks[teamData.team];
 
-    // Only animate when the team moves up
     if (prevIndex !== undefined && index < prevIndex) {
       element.classList.add("slide-up");
       element.addEventListener("animationend", () => {

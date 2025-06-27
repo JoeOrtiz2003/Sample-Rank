@@ -23,53 +23,17 @@ body {
   font-family: var(--font);
 }
 
-body.no-scroll {
-  overflow: hidden;
-}
-
 #mainDiv {
   width: var(--mainWidth);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
-  transform: translateX(0%) translateY(115px); /* <-- COMBINED */
+  transform: translateX(0%) translateY(115px);
   margin-right: 0;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 1;
 }
-
-
-#mainDiv.slide-in {
-  transform: translateX(0%) translateY(115px); /* Include Y */
-  opacity: 1;
-}
-
-#mainDiv.slide-out {
-  transform: translateX(100%) translateY(115px); /* Include Y */
-  opacity: 0;
-}
-
-
-.buttonContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.buttonContainer button {
-  padding: 20px 40px;
-  font-family: var(--font);
-  font-size: 24px;
-  margin: 10px;
-  cursor: pointer;
-}
-
 
 .rankingHeader {
   display: flex;
@@ -148,7 +112,7 @@ body.no-scroll {
 .rankingElementRank,
 .rankingElementName,
 .rankingElementKills {
-  font-size: px;
+  font-size: 14px;
   line-height: 32px;
   font-weight: 510;
   color: var(--ranking-element-color);
@@ -244,23 +208,6 @@ body.no-scroll {
   margin: 0;
 }
 
-/* Panel show animation */
-#mainDiv.stagger-animate .rankingHeader,
-#mainDiv.stagger-animate .rankingElement,
-#mainDiv.stagger-animate .lowerHeader {
-  opacity: 0;
-  transform: translateX(100%);
-  animation: staggerSlideIn 0.4s forwards ease-in-out;
-}
-
-@keyframes staggerSlideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-/* Slide-up animation without breaking layout */
 @keyframes slideUp {
   0% {
     transform: translateY(20px);
@@ -277,27 +224,6 @@ body.no-scroll {
   will-change: transform, opacity;
 }
 
-/* Additional styles as needed for layout, structure, and display */
-body.no-scroll {
-  overflow: hidden;
-}
-
-
-/* Optional: stagger entrance on show */
-#mainDiv.stagger-animate .rankingHeader,
-#mainDiv.stagger-animate .rankingElement,
-#mainDiv.stagger-animate .lowerHeader {
-  opacity: 0;
-  transform: translateX(100%);
-  animation: staggerSlideIn 0.4s forwards ease-in-out;
-}
-
-@keyframes staggerSlideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
 
 *,
 ::before,
