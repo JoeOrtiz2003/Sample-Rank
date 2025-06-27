@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mainDiv = document.getElementById("mainDiv");
-  mainDiv.style.display = "flex"; // Always visible
+  mainDiv.style.display = "flex";
 
   createRankingElements(16);
   fetchRankingData();
@@ -93,7 +93,7 @@ function updateRankingElements(data) {
 
     const aliveBoxes = element.querySelectorAll(".rankingElementAlive");
     aliveBoxes.forEach((box, i) => {
-      box.style.backgroundColor = i < teamData.alive ? "#ffff" : "#4e4e4e";
+      box.style.backgroundColor = i < teamData.alive ? "#ffffff" : "#4e4e4e";
     });
 
     if (teamData.alive === 0) {

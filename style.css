@@ -7,7 +7,7 @@
   --ranking-element-color: white;
   --ranking-uneven-background-color: #5b5c8e;
   --ranking-even-background-color: #474772;
-  --alive-background-color: #ffff;
+  --alive-background-color: #ffffff;
   --lower-background-color: #3f395f;
   --dead-background-color: #4e4e4e;
 }
@@ -64,7 +64,7 @@ body {
 
 #rankingHeaderAlive,
 .rankingElementAliveWrapper {
-  flex: 0 0 10px;
+  flex: 0 0 40px;
   justify-content: center;
 }
 
