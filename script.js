@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hideButton.style.display = "inline-block";
   });
 
-  createRankingElements(18);
+  createRankingElements(16);
   fetchRankingData();
   setInterval(fetchRankingData, 1000);
 });
