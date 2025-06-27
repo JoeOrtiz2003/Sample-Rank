@@ -53,7 +53,7 @@ const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=
 
 let previousRanks = {};
 
-function createRankingElements(count = 0) {
+function createRankingElements(count = 16) {
   const wrapper = document.getElementById("rankingElementsWrapper");
   wrapper.innerHTML = "";
 
